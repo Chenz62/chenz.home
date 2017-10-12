@@ -1,0 +1,48 @@
+$bg-colour: black;
+$bg-warning: orange;
+
+// GLOBAL STYLES
+body {
+	background-color: $bg-colour;
+}
+
+// MAIN-HEADER STYLES
+#main-header {
+	h1 {
+		font-family: 'Kaushan Script', cursive;
+	}
+	img {
+		width: 100%;
+		height: 100%;
+	}
+	a {
+		text-decoration: none;
+	}
+	i:hover {
+		-ms-transform: scale(1.4,1.4); /* IE 9 */
+		-webkit-transform: scale(1.4,1.4); /* Safari */
+		transform: scale(1.4,1.4); /* Standard syntax */
+	}
+	.port-item {
+		width: 20%;
+	}
+	.port-item .fa {
+		font-size: 2em;
+	}
+	.port-item:hover {
+		cursor: pointer;
+		opacity: .8;
+	}
+}
+
+// SKILLS STYLES
+#skills {
+	img {
+		width: 100%;
+		height: 100%;
+	}
+	.sass-less {
+		width: 60%;
+		height: 60%;
+	}
+}

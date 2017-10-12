@@ -1,0 +1,32 @@
+</head>
+
+<body>
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+		<a class="navbar-brand script" href="/">AussieCamp! <img class="d-inline-block align-top" src="/images/system/tent.png" alt="tent"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item <%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>">
+					<a class="nav-link" href="/campgrounds">Home <i class="fa fa-home" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
+				</li>
+			</ul>
+			<ul class="navbar-nav float-sm-right">
+				<% if(!currentUser){ %>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login <i class="fa fa-sign-in" aria-hidden="true"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-toggle="modal" data-target="#registerModal">Sign Up <i class="fa fa-user-plus" aria-hidden="true"></i></a>
+					</li>
+				<% } else { %>
+					<li class="nav-item">
+						<a class="nav-link" href="/users/<%= currentUser.id %>"><%= currentUser.firstName + " " + currentUser.lastName %> <img class="d-inline-block align-top" src="<%= currentUser.avatar %>" alt=""></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/logout"> Logout <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+					</li>
+				<% } %>
+			</ul>
+		</div>
+	</nav>

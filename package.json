@@ -1,0 +1,25 @@
+{
+  "name": "chenz.online",
+  "version": "2.0.0",
+  "description": "Vincent Porter Website ",
+	"homepage": "http://chenz.online",
+  "main": "app.js",
+  "scripts": {
+    "build-css": "node-sass assets/css/styles.scss > assets/css/styles.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "author": "Vincent Porter",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-sanitizer": "^1.0.2",
+    "method-override": "^2.3.10",
+    "moment": "^2.19.1",
+    "mongoose": "^4.12.1"
+  }
+}
