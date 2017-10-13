@@ -19,6 +19,10 @@ body {
   transform: scale(1.4, 1.4);
   /* Standard syntax */ }
 
+#main-header .avatar {
+  width: 30px;
+  height: 30px; }
+
 #main-header .port-item {
   width: 20%; }
 

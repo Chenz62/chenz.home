@@ -1,0 +1,101 @@
+<!-- LOGIN Modal -->
+<div class="modal fade" id="loginModal" role="dialog">
+	<div class="modal-dialog">
+		<form action="/login" method="POST">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title green script">Login!</h2>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times-circle" aria-hidden="true"></i></span></button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="username">Username</label>
+						<input id="username" name="username" class="form-control" type="text" placeholder="username">
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input id="password" name="password" class="form-control" type="password" placeholder="password">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="form-group">
+						<button type="submit" class="btn btn-block btn-success">Login!</button>
+						<button type="button" class="btn btn-block btn-warning" data-dismiss="modal" href="#" data-toggle="modal" data-target="#forgotModal">Forgot Password!</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<!-- REGISTER Modal -->
+<div class="modal fade" id="registerModal" role="dialog">
+	<div class="modal-dialog">
+		<form action="/register" method="POST">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title green script">Sign Up!</h2>
+					<button type="button" class="close" data-dismiss="modal"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="username">Username</label>
+						<input id="username" name="username" class="form-control" type="text" placeholder="username" required>
+					</div>
+					<div class="form-group">
+						<label for="firstName">First name</label>
+						<input id="firstName" name="firstName" class="form-control" type="text" placeholder="First name">
+					</div>
+					<div class="form-group">
+						<label for="lastName">Last name</label>
+						<input id="lastName" name="lastName" class="form-control" type="text" placeholder="Last name">
+					</div>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input id="email" name="email" class="form-control" type="email" placeholder="yourname@gmail.com" required>
+					</div>
+					<div class="form-group">
+						<label for="avatar">Avatar</label>
+						<input id="avatar" name="avatar" class="form-control" type="text" placeholder="Avatar URL">
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input id="password" name="password" class="form-control" type="password" placeholder="password" required>
+					</div>
+					<div class="form-group">
+						<label for="adminCode">Admin Code</label>
+						<input id="adminCode" name="adminCode" class="form-control" type="text" placeholder="Admin code">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="form-group">
+						<button class="btn btn-lg btn-success btn-block">Sign Up!</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<!-- Forgot Password Modal -->
+<div class="modal fade" id="forgotModal" role="dialog">
+	<div class="modal-dialog">
+		<form action="/forgot" method="POST">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 class="modal-title green script">Forgotten Password...!</h2>
+					<button type="button" class="close" data-dismiss="modal"><i class="fa fa-times-circle" aria-hidden="true"></i></button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" name="email" class="form-control autofocus">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="form-group">
+						<input type="submit" class="btn btn-success btn-block" value="Send Reset Email...!">
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

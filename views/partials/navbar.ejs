@@ -15,32 +15,28 @@
 						<div><a href="https://github.com/Chenz62" target="_blank"><i class="text-warning fa fa-github"></i></a></div>
 					</div>
 				</div>
-				<div class="p-4 text-center text-warning">
+				<div class="d-flex flex-row justify-content-between align-items-center p-4 text-warning">
 					<h3>Full Stack Web Developer</h3>
+					<div>
+						<% if(!currentUser){ %>
+							<a class="nav-link d-inline text-warning" href="#" data-toggle="modal" data-target="#loginModal">Login <i class="fa fa-sign-in text-warning" aria-hidden="true"></i></a>
+							<a class="nav-link d-inline text-warning" href="#" data-toggle="modal" data-target="#registerModal">Sign Up <i class="fa fa-user-plus text-warning" aria-hidden="true"></i></a>
+							<% } else { %>
+								<a class="nav-link d-inline text-warning" href="/users/<%= currentUser.id %>">
+									<%= currentUser.firstName + " " + currentUser.lastName %> <img class="avatar d-inline-block align-top" src="<%= currentUser.avatar %>" alt=""></a>
+								<a class="nav-link d-inline text-warning" href="/logout"> Logout <i class="fa fa-sign-out text-war" aria-hidden="true"></i></a>
+								<% } %>
+					</div>
 				</div>
 
 				<!-- NAVBAR -->
 				<div>
 					<div class="d-flex flex-row text-white align-items-stretch text-center">
-						<!-- <div class="port-item p-4 bg-warning text-dark"> -->
-							<a class="port-item p-4 bg-warning text-dark" href="/skills"><i class="fa fa-home d-block"></i> Skills</a>
-							<a class="port-item p-4 bg-success text-light" href="/courses"><i class="fa fa-graduation-cap d-block"></i> Course Projects</a>
-							<a class="port-item p-4 bg-dark text-light" href="/portfolio"><i class="fa fa-folder-open d-block"></i> Portfoliio</a>
-							<a class="port-item p-4 bg-primary text-light" href="/blogs"><i class="fa fa-rss d-block"></i> Blog</a>
-							<a class="port-item p-4 bg-danger text-light" href="/contact"><i class="fa fa-envelope d-block"></i> Contact</a>
-						<!-- </div> -->
-						<!-- <div class="port-item p-4 bg-success" data-toggle="collapse" data-target="#courses">
-							<i class="fa fa-graduation-cap d-block"></i> Course Projects
-						</div> -->
-						<!-- <div class="port-item p-4 bg-dark" data-toggle="collapse" data-target="#portfolio">
-							<i class="fa fa-folder-open d-block"></i> Portfoliio
-						</div> -->
-						<!-- <div class="port-item p-4 bg-primary" data-toggle="collapse" data-target="#blog">
-							<i class="fa fa-rss d-block"></i> Blog
-						</div> -->
-						<!-- <div class="port-item p-4 bg-danger" data-toggle="collapse" data-target="#contact">
-							<i class="fa fa-envelope d-block"></i> Contact
-						</div> -->
+						<a class="port-item p-4 bg-warning text-dark" href="/skills"><i class="fa fa-home d-block"></i> Skills</a>
+						<a class="port-item p-4 bg-success text-light" href="/courses"><i class="fa fa-graduation-cap d-block"></i> Course Projects</a>
+						<a class="port-item p-4 bg-dark text-light" href="/portfolio"><i class="fa fa-folder-open d-block"></i> Portfoliio</a>
+						<a class="port-item p-4 bg-primary text-light" href="/blogs"><i class="fa fa-rss d-block"></i> Blog</a>
+						<a class="port-item p-4 bg-danger text-light" href="/contact"><i class="fa fa-envelope d-block"></i> Contact</a>
 					</div>
 				</div>
 				<!-- /NAVBAR -->
@@ -50,3 +46,5 @@
 	</div>
 </header>
 <!-- /HEADER -->
+
+<% include ../partials/errors %>

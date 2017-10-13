@@ -46,7 +46,7 @@ router.post(`/email`, function (req, res) {
 	var mailOptions = {
 		from: req.body.email,
 		to: process.env.EMAIL_TO,
-		subject: `AussieCamp Contact Form`,
+		subject: `Chenz.Online Contact Form`,
 		text: req.body.comments
 	};
 	transporter.sendMail(mailOptions, function (error) {
@@ -75,11 +75,11 @@ router.post(`/register`, function (req, res) {
 		if (err) {
 			req.flash(`error`, `Sorry! We could not sign you up.`);
 			console.log(err);
-			return res.redirect(`campgrounds`);
+			return res.redirect(`back`);
 		}
 		passport.authenticate(`local`)(req, res, function () {
-			req.flash(`success`, `Welcome to AussieCamp! ` + user.firstName + `!`);
-			res.redirect(`/campgrounds`);
+			req.flash(`success`, `Welcome to Chenz.Online! ` + user.firstName + `!`);
+			res.redirect(`back`);
 		});
 	});
 });
@@ -96,7 +96,7 @@ router.post(`/login`, passport.authenticate(`local`, {
 router.get(`/logout`, function (req, res) {
 	req.logout();
 	req.flash(`success`, `Logged you out!`)
-	res.redirect(`/campgrounds`);
+	res.redirect(`/`);
 });
 
 // // USER - Reset Password
@@ -136,7 +136,7 @@ router.get(`/logout`, function (req, res) {
 // 			var mailOptions = {
 // 				to: user.email,
 // 				from: process.env.SMTP_USER,
-// 				subject: `Password Reset for AussieCamp!`,
+// 				subject: `Password Reset for Chenz.Online!`,
 // 				text: `You are receiving this because you have (or someone else has) requested the reset of the password for your account.\n\n` + `Please click on the following link, or paste this into your browser to complete the process:\n\n\t` + `http://` + req.headers.host + `/reset/` + token + `\n\n` + `If you did not request this, please ignore this email and your password will remain unchanged.\n\n` + `Happy Camping...!\n\n`
 // 			};
 // 			transporter.sendMail(mailOptions, function (err) {
