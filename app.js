@@ -10,12 +10,13 @@ var passport = require(`passport`);
 var LocalStrategy = require(`passport-local`).Strategy;
 // var passportLocalMongoose = require(`passport-local-mongoose`);
 var User = require(`./models/user`);
+var authRoutes = require(`./routes/auth`);
+var courseRoutes = require(`./routes/courses`);
+var blogRoutes = require(`./routes/posts`);
 // TODO are these lines required
 // var Campground = require(`./models/campground`);
 // var Comment = require(`./models/comment`);
-// var campgroundRoutes = require(`./routes/campgrounds`);
 // var commentRoutes = require(`./routes/comments`);
-// var indexRoutes = require(`./routes/auth`);
 
 require('dotenv').load();
 
@@ -63,14 +64,15 @@ app.use(function (req, res, next) {
 	next();
 });
 
-// app.use(`/campgrounds`, campgroundRoutes);
+app.use(`/`, authRoutes);
+app.use(`/courses`, courseRoutes);
+app.use(`/blogs`, blogRoutes);
 // app.use(`/campgrounds/:id/comments`, commentRoutes);
-// app.use(`/`, indexRoutes);
 
 // ROUTES
-app.get(`/`, function (req, res) {
-	res.render(`index`);
-});
+// app.get(`/`, function (req, res) {
+// 	res.render(`index`);
+// });
 // app.get(`/campgrounds`, function (req, res) {
 // 	res.render(`campgrounds/list`);
 // });
